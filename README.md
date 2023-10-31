@@ -1,5 +1,13 @@
 # Counting frequency of each word in a file
 
+## Profiling
+
+`cargo flamegraph --root -- --path <input-file>` (`dtrace` on MacOS requires `--root`)
+
+`open flamegraph.svg`
+
+## Questions one could ask during an interview
+
 Answer all questions mentioned here:
 https://benhoyt.com/writings/count-words/
 
@@ -29,9 +37,15 @@ O(n * m): iterate over each word O(n) and add to HashMap O(1 * m).
 
   - [x] Getting the frequency of the most common k words
 
-O(k * (n log n)): Sorting is O(n log n) and comparing any two words is O(k)
+O(m * (n log n)): Sorting is O(n log n) and comparing any two words is O(m)
 
-- [ ] What’s the memory usage?
-- [ ] Roughly how long would your program take to process a 1GB file?
+- [x] What’s the memory usage?
+
+Topped out at 1.1MB when processing a 1.3GB file.
+
+- [x] Roughly how long would your program take to process a 1GB file?
+
+Took around 35 seconds on a 1.3GB file on a MacBook Pro M1 2020.
+
 - [ ] Would your solution still work for 1TB?
 - [ ] Or you can take it in a “software engineering” direction and talk about error handling, testability, turning it into a hardened command line utility, etc.
