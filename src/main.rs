@@ -5,7 +5,7 @@ use clap::Parser;
 
 use count_words::io::read_lines;
 
-// TODO: Answer questions unders `/docs/COUNT_WORDS.md`
+// TODO: Answer questions in README.md
 // TODO: Make the program multi-threaded and count the word frequency for many
 // files. Aggregate the frequency of each word into one count at the end.
 // Compare performance between the single-threaded and multi-threaded versions.
